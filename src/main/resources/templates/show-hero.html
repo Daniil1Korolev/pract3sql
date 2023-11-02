@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Title</title>
+</head>
+<body>
+<form th:method="patch" th:action="@{/hero/{id}(id=${hero.id})}" th:object="${hero}">
+    <div style="display: flex; flex-direction: column">
+        <label for="name">Имя героя:</label>
+        <input type="text" class="form-control" th:field="*{name}" id="name"/>
+        <label for="sila">Сила героя:</label>
+        <input type="text" class="form-control" th:field="*{sila}" id="sila"/>
+        <label for="attribute">Аттрибут героя:</label>
+        <input type="text" class="form-control" th:field="*{attribute}" id="attribute"/>
+        <label for="rare">Рарность героя:</label>
+        <input type="text" class="form-control" th:field="*{rare}" id="rare"/>
+    </div>
+    <br>
+    <button class="btn btn-primary" type="submit">изменить</button>
+</form>
+<br>
+<form th:method="delete" th:action="@{/hero/{id}(id=${hero.id})}">
+    <button class="btn btn-danger" type="submit">удалить</button>
+</form>
+</body>
+</html>

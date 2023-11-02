@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Title</title>
+</head>
+<body>
+<div class="d-flex gap-2 justify-content-center py-5" style="background: rgb(150,119,119)">
+    <a class="btn btn-primary rounded-pill px-3" href="/person/">Person</a>
+    <a class="btn btn-secondary rounded-pill px-3" href="/game/">Game</a>
+    <a class="btn btn-success rounded-pill px-3"  href="/tovar/">Tovar</a>
+    <a class="btn btn-danger rounded-pill px-3" href="/tur/">Tur</a>
+    <a class="btn btn-warning rounded-pill px-3" href="/hero/">Hero</a>
+</div>
+<table class="table table-striped">
+    <h2>Герои</h2>
+    <form method="post" action="/hero/">
+        <input type="search" name="name" placeholder="Имя">
+        <button type="submit" class="btn btn-secondary">Поиск</button>
+    </form>
+
+    <thead>
+    <tr>
+        <th scope="col">Имя героя</th>
+        <th scope="col">Сила героя</th>
+        <th scope="col">Аттрибут героя</th>
+        <th scope="col">Рарность героя</th>
+
+        <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <div th:each="hero : ${hero}">
+        <tr>
+            <td th:text="${hero.name}"></td>
+            <td th:text="${hero.sila}"></td>
+            <td th:text="${hero.attribute}"></td>
+            <td th:text="${hero.rare}"></td>
+            <td>
+                <a th:href="@{/hero/{id}(id=${hero.Id})}">Перейти</a>
+            </td>
+        </tr>
+    </div>
+    </tbody>
+</table>
+<form action="/hero/create-hero" method="get">
+    <button class="btn btn-secondary">Создать героя</button>
+</form>
+</body>
+</html>

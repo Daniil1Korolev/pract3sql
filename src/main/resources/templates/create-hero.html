@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Title</title>
+</head>
+<body>
+<form action="/hero/create-hero" method="post" th:object="${hero}">
+    <div>
+        <label for="name">Имя:</label>
+        <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="color: red"></span>
+        <input class="form-control" type="text" id="name" th:field="*{name}">
+    </div>
+    <div>
+        <label for="sila">Сила:</label>
+        <span th:if="${#fields.hasErrors('sila')}" th:errors="*{sila}" style="color: red"></span>
+        <input class="form-control" type="text" id="sila" th:field="*{sila}">
+    </div>
+    <div>
+        <label for="attribute">Аттрибут:</label>
+        <span th:if="${#fields.hasErrors('attribute')}" th:errors="*{attribute}" style="color: red"></span>
+        <input class="form-control" type="text" id="attribute" th:field="*{attribute}">
+    </div>
+    <div>
+        <label for="rare">Рарность:</label>
+        <input class="form-control" type="text" id="rare" th:field="*{rare}">
+    </div>
+    <br>
+    <div>
+        <button type="submit" class="btn btn-primary">Создать</button>
+    </div>
+</form>
+</body>
+</html>

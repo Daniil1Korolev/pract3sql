@@ -1,0 +1,109 @@
+body {
+    background-color: #8a7d7d;
+}
+
+
+a {
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+
+a {
+    text-decoration: none;
+    color: #333;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+a:hover {
+    border-color: #000000; /* Цвет подчеркивания при наведении */
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+a:hover {
+    animation: colorChange 0.5s;
+}
+
+@keyframes colorChange {
+    0% {
+        color: #333;
+    }
+    100% {
+        color: #000000; /* Цвет при наведении */
+    }
+}
+
+
+a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #000000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+a.button:hover {
+    background-color: #7e818d;
+}
+
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0077b6; /* Цвет фона */
+    color: #ffffff; /* Цвет текста */
+    text-decoration: none; /* Убрать подчеркивание ссылки */
+    border-radius: 5px; /* Закруглить углы */
+    border: none; /* Убрать границу */
+    cursor: pointer; /* Изменить указатель при наведении */
+}
+
+/* Стили для кнопки при наведении */
+.button:hover {
+    background-color: #1d3557; /* Новый цвет фона при наведении */
+}
+input[type="submit"] {
+    background-color: #000000; /* Цвет фона */
+    color: #fff; /* Цвет текста */
+    padding: 10px 20px; /* Отступы вокруг текста */
+    border: none; /* Убрать границу */
+    border-radius: 5px; /* Закруглить углы */
+    cursor: pointer; /* Изменить указатель при наведении */
+}
+
+/* Стили для кнопки "DELETE" при наведении */
+input[type="submit"]:hover {
+    background-color: #d81c00; /* Новый цвет фона при наведении */
+}
+
+ul.nav{
+    margin-left: 0px;
+    padding-left: 0px;
+    list-style: none;
+}
+.nav li {
+    display: inline;
+}
+ul.nav a {
+    display: inline-block;
+    width: 5em;
+    padding:10px;
+    background-color: #f4f4f4;
+    border: 1px dashed #333;
+    text-decoration: none;
+    color: #333;
+    text-align: center;
+}
+ul.nav a:hover{
+    background-color: #333;
+    color: #f4f4f4;
+}
+

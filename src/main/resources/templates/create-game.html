@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Title</title>
+</head>
+<body>
+<form action="/game/create-game" method="post" th:object="${game}">
+    <div>
+        <label for="name">Название:</label>
+        <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="color: red"></span>
+        <input class="form-control" type="text" id="name" th:field="*{name}">
+    </div>
+    <div>
+        <label for="janr">Жанр:</label>
+        <span th:if="${#fields.hasErrors('janr')}" th:errors="*{janr}" style="color: red"></span>
+        <input class="form-control" type="text" id="janr" th:field="*{janr}">
+    </div>
+    <div>
+        <label for="novinka">Новинка?:</label>
+        <span th:if="${#fields.hasErrors('novinka')}" th:errors="*{novinka}" style="color: red"></span>
+        <input class="form-control" type="text" id="novinka" th:field="*{novinka}">
+    </div>
+    <div>
+        <label for="plata">Платная?:</label>
+        <input class="form-control" type="text" id="plata" th:field="*{plata}">
+    </div>
+    <br>
+    <div>
+        <button type="submit" class="btn btn-primary">Создать</button>
+    </div>
+</form>
+</body>
+</html>

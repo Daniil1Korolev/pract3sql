@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="d-flex gap-2 justify-content-center py-5" style="background: rgb(150,119,119)">
+    <a class="btn btn-primary rounded-pill px-3" href="/person/">Person</a>
+    <a class="btn btn-secondary rounded-pill px-3" href="/game/">Game</a>
+    <a class="btn btn-success rounded-pill px-3"  href="/tovar/">Tovar</a>
+    <a class="btn btn-danger rounded-pill px-3" href="/tur/">Tur</a>
+    <a class="btn btn-warning rounded-pill px-3" href="/hero/">Hero</a>
+</div>
+
+<table class="table table-striped">
+    <h2>Игры</h2>
+    <form method="post" action="/game/">
+        <input type="search" name="name" placeholder="Имя">
+        <button type="submit" class="btn btn-secondary">Поиск</button>
+    </form>
+
+    <thead>
+    <tr>
+        <th scope="col">Название игры</th>
+        <th scope="col">Жанр игры</th>
+        <th scope="col">Новинка?</th>
+        <th scope="col">Плата?</th>
+
+        <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <div th:each="game : ${game}">
+        <tr>
+            <td th:text="${game.name}"></td>
+            <td th:text="${game.janr}"></td>
+            <td th:text="${game.novinka}"></td>
+            <td th:text="${game.plata}"></td>
+            <td>
+                <a th:href="@{/game/{id}(id=${game.Id})}">Перейти</a>
+            </td>
+        </tr>
+    </div>
+    </tbody>
+</table>
+<form action="/game/create-game" method="get">
+    <button class="btn btn-secondary">Создать игру</button>
+</form>
+</body>
+</html>
